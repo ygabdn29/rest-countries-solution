@@ -1,0 +1,51 @@
+.country-link,
+.country-link:active,
+.country-link:visited {
+  text-decoration: none;
+  color: var(--clr-text);
+}
+
+.country__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--clr-element);
+  box-shadow: 0 0.5rem 2rem 0.5rem rgba(20, 20, 20, 0.1);
+}
+
+.country-flag-container {
+  height: 12rem;
+}
+
+.country__flag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country__details-text-box {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+}
+
+.country__name {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.country__detail-type {
+  font-weight: 600;
+}
+
+.country__population,
+.country__region,
+.country__capital {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
