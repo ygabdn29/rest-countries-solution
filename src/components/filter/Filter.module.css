@@ -1,0 +1,21 @@
+.country__filter-select {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  justify-self: end;
+  width: 30%;
+  background-color: var(--clr-elements);
+  color: var(--clr-text);
+  box-shadow: 0 0.5rem 2rem 0.5rem rgba(20, 20, 20, 0.05);
+}
+
+.country__filter-options {
+  color: var(--clr-text);
+}
+
+@media (max-width: 375px) {
+  .country__filter-select {
+    width: auto;
+  }
+}

@@ -2,24 +2,25 @@
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
-  --clr-background: hsl(0, 0%, 98%)
-  --clr-text: hsl(200, 15%, 8%)
-  --clr-input: hsl(0, 0%, 52%)
-  --clr-elements: hsl(0, 0%, 100%)
+  font-family: "Nunito Sans", sans-serif;
+  --clr-background: hsl(0, 0%, 98%);
+  --clr-text: hsl(200, 15%, 8%);
+  --clr-input: hsl(0, 0%, 52%);
+  --clr-elements: hsl(0, 0%, 100%);
+  background-color: var(--clr-background);
+  transition: all 0.3s;
 }
 
-body .dark-theme{
-  --clr-background: hsl(207, 26%, 17%)
-  --clr-text: hsl(0, 0%, 100%)
-  --clr-elements: hsl(209, 23%, 22%)
+body.dark-theme {
+  --clr-background: hsl(207, 26%, 17%);
+  --clr-text: hsl(0, 0%, 100%);
+  --clr-input: hsl(0, 0%, 100%);
+  --clr-elements: hsl(209, 23%, 22%);
 }
-
-

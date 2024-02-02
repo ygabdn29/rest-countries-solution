@@ -1,6 +1,22 @@
+import { useEffect, useState } from "react";
 import styles from "./Navigation.module.css";
 
 function Navigation() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(
+    function () {
+      isDark
+        ? document.body.classList.add("dark-theme")
+        : document.body.classList.remove("dark-theme");
+    },
+    [isDark]
+  );
+
+  function handleChecked() {
+    setIsDark(!isDark);
+  }
+
   return (
     <nav className={styles.header__navigation}>
       <ul className={styles["header__nav-list"]}>
@@ -9,12 +25,25 @@ function Navigation() {
         </li>
 
         <li>
-          <div>
-            <input type="checkbox" name="btn-dark" id="btn-dark" />
+          <div className={styles["btn-dark-container"]}>
+            <button
+              onClick={() => handleChecked()}
+              className={styles["btn-toggle-dark"]}
+            >
+              {isDark ? (
+                <ion-icon
+                  name="moon"
+                  className={styles["icon-light-theme"]}
+                ></ion-icon>
+              ) : (
+                <ion-icon
+                  name="moon-outline"
+                  className={styles["icon-light-theme"]}
+                ></ion-icon>
+              )}
+            </button>
 
-            <label htmlFor="btn-dark" className={styles["btn-theme-label"]}>
-              Dark Mode
-            </label>
+            <p className={styles["dark-theme-label"]}>Dark Mode</p>
           </div>
         </li>
       </ul>

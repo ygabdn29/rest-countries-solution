@@ -1,0 +1,21 @@
+.country__search-input {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  padding: 1.5rem 3rem;
+  width: 75%;
+  box-shadow: 0 0.5rem 2rem 0.5rem rgba(20, 20, 20, 0.05);
+  background: var(--clr-elements);
+  color: var(--clr-text);
+}
+
+.country__search-input::placeholder {
+  color: var(--clr-input);
+}
+
+@media (max-width: 375px) {
+  .country__search-input {
+    width: 100%;
+  }
+}

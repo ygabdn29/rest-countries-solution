@@ -1,7 +1,16 @@
 .country-container {
   display: grid;
+  grid-column: 1 / -1;
   grid-template-columns: repeat(4, 1fr);
   gap: 4.5rem;
 
   padding: 2rem 4rem;
+}
+
+@media (max-width: 375px) {
+  .country-container {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    row-gap: 3rem;
+  }
 }

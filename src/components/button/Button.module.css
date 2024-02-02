@@ -1,0 +1,17 @@
+.btn-back {
+  padding: 1rem 4rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--clr-elements);
+  color: var(--clr-text);
+  box-shadow: 0 0 0.5rem 0.2rem rgba(20, 20, 20, 0.2);
+}
+
+@media (max-width: 375px) {
+  .btn-back {
+    border-radius: 0px;
+    padding: 1rem 2.5rem;
+  }
+}
