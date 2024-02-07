@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import Homepage from "./pages/homepage/Homepage";
 import CountryDetail from "./pages/countryDetail/CountryDetail";
@@ -11,6 +11,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Homepage />}></Route>
+          <Route
+            path="/rest-countries-solution/"
+            element={<Navigate to="/"></Navigate>}
+          ></Route>
           <Route path="/:countryName" element={<CountryDetail />}></Route>
         </Routes>
       </BrowserRouter>

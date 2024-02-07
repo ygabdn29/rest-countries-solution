@@ -10,7 +10,7 @@ function CountryItem({ country }) {
       >
         <div className={styles["country-flag-container"]}>
           <img
-            src={country.flags.png}
+            src={country?.flags.png}
             className={styles["country__flag"]}
           ></img>
         </div>

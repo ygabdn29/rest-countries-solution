@@ -13,12 +13,6 @@ function Homepage() {
   const [search, setSearch] = useState("");
   const [regionFilter, setRegionFilter] = useState("");
 
-  // const regions = countries?.reduce((regionArr, currCountry) => {
-  //   if (!regionArr?.map((el) => el).includes(currCountry.region))
-  //     return [currCountry.region, ...regionArr];
-  //   else return regionArr;
-  // }, []);
-
   useEffect(function () {
     fetchCountries();
   }, []);
