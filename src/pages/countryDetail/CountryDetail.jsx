@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./countryDetail.module.css";
 import Loading from "../../components/loading/Loading";
 import Button from "../../components/button/Button";
@@ -7,21 +7,24 @@ import Button from "../../components/button/Button";
 function CountryDetail() {
   const { countryName } = useParams();
   const [country, setCountry] = useState({});
+  const [borderCountryName, setBorderCountryName] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
   const {
     flags,
     name,
     population,
     capital,
-    borders,
     region,
     subregion,
     currencies,
     languages,
     tld,
   } = country;
+
   const countryCurrencies =
     currencies && Object.entries(currencies).map(([key, value], i) => value);
+
   const countryNames =
     name &&
     Object.entries(name["nativeName"])
@@ -29,31 +32,57 @@ function CountryDetail() {
       .map(({ official, common }) => official)
       .join(" , ");
 
-  // name && Object.entries(name).map(([key, value], i) => key);
   const countryLanguages =
     languages &&
     Object.entries(languages)
       .map(([key, value], i) => value)
       .join(", ");
 
-  useEffect(function () {
-    async function getSelectedCountry(countryName) {
-      try {
-        setIsLoading(true);
+  const borderCountries =
+    borderCountryName && borderCountryName.map(({ name }) => name["common"]);
 
-        const res = await fetch(
-          `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
-        );
-        const data = await res.json();
+  useEffect(
+    function () {
+      async function getSelectedCountry(countryName) {
+        try {
+          setIsLoading(true);
 
-        setCountry(data[0]);
-        setIsLoading(false);
-      } catch (err) {
-        console.log(err);
+          const res = await fetch(
+            `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
+          );
+          const data = await res.json();
+
+          setCountry(data[0]);
+          setIsLoading(false);
+        } catch (err) {
+          console.log(err);
+        }
       }
-    }
-    getSelectedCountry(countryName);
-  }, []);
+      getSelectedCountry(countryName);
+    },
+    [countryName]
+  );
+
+  useEffect(
+    function () {
+      async function fetchBorderCountryName() {
+        const { borders } = country || "";
+        const bordersName = [];
+
+        for (let i = 0; i < borders?.length; i++) {
+          let response = await fetch(
+            `https://restcountries.com/v3.1/alpha/${borders[i]}?fields=name`
+          );
+          let data = await response.json();
+          bordersName.push(data);
+        }
+
+        setBorderCountryName(bordersName);
+      }
+      fetchBorderCountryName();
+    },
+    [country]
+  );
 
   return (
     <div className={styles["country-container-wrapper"]}>
@@ -67,9 +96,6 @@ function CountryDetail() {
             </div>
 
             <div className={styles["country-detail-container"]}>
-              {/* <div className={styles["country__flag-container"]}>
-
-            </div> */}{" "}
               <img
                 src={flags ? flags.png : ""}
                 alt={flags ? flags.alt : ""}
@@ -79,7 +105,6 @@ function CountryDetail() {
                 <div className={styles["country__name-container"]}>
                   <h1 className={styles["country__name"]}>{name?.common}</h1>
                 </div>
-
                 <div className={styles["country__detail-text-box"]}>
                   <div className={styles["country__detail-box"]}>
                     <p className={styles["country__detail-type"]}>
@@ -145,7 +170,23 @@ function CountryDetail() {
                     </p>
                   </div>
                 </div>
-                <p className={styles["country__borders"]}>Border Countries: </p>
+                <div className={styles["country__borders-container"]}>
+                  <p className={styles["country__borders"]}>
+                    Border Countries:
+                  </p>
+                  <span className={styles["country__border-button-container"]}>
+                    {borderCountries &&
+                      borderCountries.map((country) => (
+                        <Link
+                          key={country}
+                          className={styles["country__border-button"]}
+                          to={`/${country.toLowerCase()}`}
+                        >
+                          {country}
+                        </Link>
+                      ))}
+                  </span>
+                </div>
               </div>
             </div>
           </>

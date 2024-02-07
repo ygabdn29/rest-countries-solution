@@ -23,7 +23,7 @@ function CountryItem({ country }) {
           <p className={styles["country__detail-type"]}>
             Population:
             <span className={styles["country__population"]}>
-              {` ${+country.population}`}
+              {` ${country.population.toLocaleString()}`}
             </span>
           </p>
           <p className={styles["country__detail-type"]}>

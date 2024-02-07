@@ -1,8 +1,8 @@
 .btn-back {
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 1rem;
   background-color: var(--clr-elements);
   color: var(--clr-text);
