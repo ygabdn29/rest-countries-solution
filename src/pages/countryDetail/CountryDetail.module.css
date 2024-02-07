@@ -96,13 +96,16 @@
 }
 
 .country__border-button {
+  display: flex;
   border: none;
   outline: none;
+  padding: 0.5rem 2rem;
   color: var(--clr-text);
   background-color: var(--clr-elements);
   text-decoration: none;
   font-weight: 300;
-  padding: 0.5rem 2rem;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 0 0.5rem 0.1rem rgba(20, 20, 20, 0.1);
 }
 
