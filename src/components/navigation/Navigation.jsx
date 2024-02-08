@@ -44,7 +44,6 @@ function Navigation() {
                 ></ion-icon>
               )}
             </button>
-
             <p className={styles["dark-theme-label"]}>Dark Mode</p>
           </div>
         </li>

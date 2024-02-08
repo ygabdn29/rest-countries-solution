@@ -113,7 +113,7 @@
   .country-container {
     grid-template-columns: 1fr;
     row-gap: 2rem;
-    padding: 0 1rem 2rem 1rem;
+    padding: 0 0.5rem 2rem 0.5rem;
   }
 
   .btn-container {
@@ -123,6 +123,7 @@
   .country-detail-container {
     flex-direction: column;
     gap: 2rem;
+    align-items: start;
   }
 
   .country__flag-container {

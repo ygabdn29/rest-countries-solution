@@ -25,7 +25,7 @@
   justify-content: end;
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .country__homepage {
     grid-template-columns: 1fr;
   }
@@ -38,5 +38,11 @@
 
   .country__filter-select-container {
     justify-content: start;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .country__input-container {
+    padding: 0 2rem;
   }
 }
