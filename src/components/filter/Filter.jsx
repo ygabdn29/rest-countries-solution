@@ -10,6 +10,7 @@ function Filter({ regionFilter, onFilter }) {
         e.preventDefault();
         onFilter(e.target.value);
       }}
+      aria-label="Select for filtering countries based on region"
     >
       <option value={""}>Filter by Region</option>
       <option value={"Africa"}>Africa</option>

@@ -12,7 +12,11 @@ function CountryItem({ country }) {
           <img
             src={country?.flags.png}
             className={styles["country__flag"]}
-            alt={country?.flags.alt}
+            alt={
+              country?.flags.alt
+                ? country?.flags.alt
+                : `Image of a Country's flag`
+            }
           ></img>
         </div>
 
