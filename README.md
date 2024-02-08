@@ -54,11 +54,11 @@ Users should be able to:
 - CSS Grid
 - Flexbox
 - Vite
-- [React](https://reactjs.org/) - JS library
+- [React](https://react.dev/) - JS library
 
 ### What I learned
 
-This is the first challenge that I solved using Vite, ReactJS, CSS Module, and React-Router. I try to implement what I learned from react course that I currently enrolled in. Though for deployment I need to search for it alone instead of following the course and I didn't use all the hooks I learn from the course like useRef or useReduce. Maybe I could try another challenge or refactor this one so that I can try to use different hooks.
+This is the first challenge that I solved using Vite and ReactJS. I try to implement what I learned from react course that I currently enrolled in. Though for deployment I need to search for it alone instead of following the course and I didn't use all the hooks I learn from the course like useRef or useReduce. Maybe I could try another challenge or refactor this one so that I can try to use different hooks.
 
 ### Continued development
 
