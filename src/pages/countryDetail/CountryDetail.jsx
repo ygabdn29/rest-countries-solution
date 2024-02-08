@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import styles from "./countryDetail.module.css";
+import styles from "./CountryDetail.module.css";
 import Loading from "../../components/loading/Loading";
 import Button from "../../components/button/Button";
 
