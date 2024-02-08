@@ -35,6 +35,7 @@
   outline: none;
   border: none;
   background-color: var(--clr-background);
+  cursor: pointer;
 
   /* padding: 1rem; */
 }

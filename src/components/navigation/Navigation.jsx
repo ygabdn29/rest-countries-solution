@@ -29,6 +29,8 @@ function Navigation() {
             <button
               onClick={() => handleChecked()}
               className={styles["btn-toggle-dark"]}
+              role="button"
+              aria-label="Dark Theme Toggle"
             >
               {isDark ? (
                 <ion-icon
