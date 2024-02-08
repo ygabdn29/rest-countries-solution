@@ -12,10 +12,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Homepage />}></Route>
-          <Route
-            path="/rest-countries-solution/"
-            element={<Navigate to="/"></Navigate>}
-          ></Route>
           <Route path="/:countryName" element={<CountryDetail />}></Route>
           <Route path="*" element={<NotFound></NotFound>} />
         </Routes>
